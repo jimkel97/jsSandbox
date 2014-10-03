@@ -6,15 +6,24 @@
 <a href="forms.html">Forms</a>
 <a href="practice.html">Practice Area</a>
 <p id="greet">
-	<a href="javascript:void(0)" onmouseover="greetWorld();">
+	<a href="javascript:void(0)" onmouseover="whoDat();">
 		Some text
 	</a>
 </p>
 <script>
-	function greetWorld() {
-		var greeting="Hello World!";
-		alert(greeting);
-	}
+    function Person (name, relation, age, city, state, zip) {
+        this.name = name;
+        this.relation = relation;
+        this.age = price;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+    };
+    var jim = new Person("Jim", "dad", 42, "Casselberry", "FL", 32707);
+    var family = [jim];
+    function whoDat() {
+        alert(family);
+    };
 </script>
 </body>
 </html>
