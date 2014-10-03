@@ -1,0 +1,70 @@
+<html>
+<head><title>Form Practice</title></head>
+<body>
+<a href="index.html">Home</a>
+<a href="events.html">Event Handling</a>
+<a href="forms.html">Forms</a>
+<a href="practice.html">Practice Area</a>
+<h2>Form 1</h2>
+<form onsubmit="return checkForLastName();">
+	Please enter your last name<br>
+	<input type="text" id="lastNameField">
+	<input type="submit" value="Submit Form">
+</form>
+<h2>Form 2</h2>
+<form onsubmit="return checkForSelection('states');">
+	<select id="states">
+		<option value="" selected="selected">SELECT A STATE</OPTION>
+		<option value="AL">Alabama</option>
+		<option value="AK">Alaska</option>
+		<option value="AZ">Arizona</option>
+		<option value="AR">Arkansas</option>
+	</select>
+	<input type="submit" value="Submit Form">
+</form>
+<h2>Form 3</h2>
+<h3>Radio Buttons</h3>
+<form>
+	<input type="radio" name="r1" value="cat">
+	<input type="radio" name="r1" value="bat">
+	<input type="radio" name="r1" value="hat">
+	<input type="submit" value="Submit Form">
+</form>
+<script>
+	/* script for form 1 */
+	function checkForLastName() {
+		var targetField = document.getElementById("lastNameField");
+		if (targetField.value.length === 0) {
+			alert("Please enter your last name");
+			targetField.focus();
+			targetField.style.background = "yellow";
+			return false;
+		};
+		targetField.style.background = "white";
+	};
+</script>
+<script>
+	/* script for form 2 */
+	function checkForSelection(selecID) {
+		 var target = document.getElementById(selecID);
+		if (target.selectedIndex === 0) {
+			alert("Please select a state");
+			return false;
+		};
+	};
+</script>
+<script>
+	/* script for form 2 */
+	function validateRadios(eName) {
+		var radios = document.getElementsByName(eName);
+		for (var i = 0; i < radios.length; i++) {
+			if (radios[i].checked) {
+				return true;
+			};
+		};
+		alert("Please check one.");
+		return false;
+	};
+</script>
+</body>
+</html>
